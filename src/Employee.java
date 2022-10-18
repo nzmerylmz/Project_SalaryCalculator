@@ -30,20 +30,18 @@ public class Employee {
     public double raiseSalary() {
         int currentYear = 2021;
         int yearsOfEmployment = currentYear - this.hireYear;
-        double salaryIncludingTaxAndBonus = this.salary + bonus() - tax(); // raiseSalary will be calculated after bonus and tax calculations are taken into account
         if (yearsOfEmployment < 10) {
-            return salaryIncludingTaxAndBonus * 0.05;
+            return this.salary * 0.05;
         } else if (yearsOfEmployment < 20) {
-            return salaryIncludingTaxAndBonus * 0.10;
+            return this.salary * 0.10;
         } else {
-            return salaryIncludingTaxAndBonus * 0.15;
+            return this.salary * 0.15;
         }
     }
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "\nName= " + name +
+        return  "Name= " + name +
                 "\nSalary= " + salary +
                 "\nWork Hours= " + workHours +
                 "\nHiring Year= " + hireYear +
@@ -51,7 +49,7 @@ public class Employee {
                 "\nBonus= " + bonus() + " TL" +
                 "\nAmount of Salary Increase= " + raiseSalary() + " TL" +
                 "\nSalary including Tax and Bonus= " + (salary + bonus() - tax()) + " TL" +
-                "\nTotal Salary including Salary Increase= " + (salary + bonus() - tax() + raiseSalary()) + " TL" + // salary (after bonus added and tax subtracted) with amount of salary increase added
-                '}';
+                "\nTotal Salary including Salary Increase= " + (salary + bonus() - tax() + raiseSalary()) + " TL"; // salary (after bonus added and tax subtracted) with amount of salary increase added
+
     }
 }
